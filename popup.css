@@ -1,0 +1,34 @@
+.container {
+    width: 280px;
+    color: #314d3e;
+  }
+  .title {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px;
+  }
+
+  .buttonWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  button:hover {
+    background-color: #d5e3ff;
+  }
+  
+  button.active {
+    background-color: white;
+  }
+
+  .active {
+    background-color: white;
+  }
+
+  .content {
+    display: none;
+    padding: 10px 20px;
+  }
+  .content.active {
+    display: block;
+  }

@@ -1,0 +1,46 @@
+<link href="popup.css" rel="stylesheet" type="text/css" />
+<script type="module" src="popup.js"></script>
+
+<div class="container">
+  <div class="title">Nepali Date Converter</div>
+  <div class="wrapper">
+    <div class="contentWrapper">
+      <div class="content active" id="single">
+        <label for="dateAD">Date in AD:</label>
+        <input
+          type="text"
+          id="dateAD"
+          name="dateAD"
+          placeholder="YYYY-MM-DD"
+          required
+          pattern="\d{4}/\d{1,2}/\d{1,2}"
+        />
+
+        <p>Date in BS: <span id="dateBS"></span></p>
+        <button class="convertone">Convert One</button>
+        <button class="clear">Clear</button>
+      </div>
+      <div class="content" id="multiple">
+        Many to Many Date Converter
+        <button>Convert All</button>
+      </div>
+    </div>
+
+    <div class="buttonWrapper">
+      <button
+        class="tab-button active"
+        style="border-top-left-radius: 10px; border-bottom-left-radius: 10px"
+        data-id="single"
+      >
+        Single
+      </button>
+      <button
+        class="tab-button"
+        style="border-top-right-radius: 10px; border-bottom-right-radius: 10px"
+        data-id="multiple"
+      >
+        Multiple
+      </button>
+    </div>
+  </div>
+</div>
