@@ -2,45 +2,38 @@
 <script type="module" src="popup.js"></script>
 
 <div class="container">
-  <div class="title">Nepali Date Converter</div>
+  <div class="title">B.S Date Converter</div>
+
   <div class="wrapper">
     <div class="contentWrapper">
-      <div class="content active" id="single">
-        <label for="dateAD">Date in AD:</label>
-        <input
-          type="text"
-          id="dateAD"
-          name="dateAD"
-          placeholder="YYYY-MM-DD"
-          required
-          pattern="\d{4}/\d{1,2}/\d{1,2}"
-        />
+      <div class="content active" id="main-content">
+        <div>
+          <label for="date"><span id="label-header">AD TO BS</span> </label>
+          <input
+            type="text"
+            id="date"
+            name="date"
+            placeholder="YYYY-MM-DD"
+            required
+            pattern="\d{4}/\d{1,2}/\d{1,2}"
+          />
+        </div>
 
-        <p>Date in BS: <span id="dateBS"></span></p>
-        <button class="convertone">Convert One</button>
-        <button class="clear">Clear</button>
-      </div>
-      <div class="content" id="multiple">
-        Many to Many Date Converter
-        <button>Convert All</button>
-      </div>
-    </div>
+        <p class="result">RESULT: <span id="result-date"></span></p>
 
-    <div class="buttonWrapper">
-      <button
-        class="tab-button active"
-        style="border-top-left-radius: 10px; border-bottom-left-radius: 10px"
-        data-id="single"
-      >
-        Single
-      </button>
-      <button
-        class="tab-button"
-        style="border-top-right-radius: 10px; border-bottom-right-radius: 10px"
-        data-id="multiple"
-      >
-        Multiple
-      </button>
+        <div class="buttonWrapper">
+          <button class="convert">Convert</button>
+          <button class="clear">Clear</button>
+        </div>
+      </div>
+      <div class="content" id="setting-content">
+        Calender or Settings
+        <div class="today-date">
+          <span id="todayADdate">Dec 3, 2022</span>
+          <span id="todayBSdate">म 17, 2078</span>
+        </div>
+        <button class="tab-button" data-id="main-content">Back</button>
+      </div>
     </div>
   </div>
 </div>
