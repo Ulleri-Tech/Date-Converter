@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "Nepali Date Converter",
+    "name": "Nepali BS Date Converter",
     "version": "0.1.0",
-    "description": "Convert Bikram Sambat (BS) Date to Anno Domini (AD)",
+    "description": "Convert Bikram Sambat (BS) Date to Anno Domini (AD) and vice versa",
     "icons":{
         "128" :"assets/logo128.png"
     },
@@ -10,9 +10,9 @@
         "default_icon": {
             "16": "assets/logo128.png",
             "24": "assets/logo128.png",
-            "32": "assets/logo128.png"
+            "32": "assets/logo400.png"
           },
-        "default_title": "Nepali Date Converter",
+        "default_title": "Bikram Sambat Date Converter",
         "default_popup": "popup.html"
       }
 }
