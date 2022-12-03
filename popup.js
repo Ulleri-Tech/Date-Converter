@@ -4,8 +4,6 @@ const tabButton = document.querySelectorAll(".tab-button");
 const contents = document.querySelectorAll(".content");
 const convertButtton = document.querySelector(".convert")
 const clearButton = document.querySelector(".clear")
-const swap = document.querySelector(".swap-button");
-const inputElement = document.getElementById('date');
 const resultElement = document.getElementById('result-date');
 const Endpoint = 'https://binij-web-server.netlify.app/.netlify/functions/date-converter'
 let dateBS2AD = true;
@@ -25,23 +23,26 @@ tabs.onclick = e => {
         element.classList.add("active");
     }
 }
-swap.onclick = () => {
-    const labelElement = document.getElementById('label-header')
-    if (labelElement.innerHTML == "AD TO BS") {
-        labelElement.innerHTML = "BS TO AD"
-        dateBS2AD = false;
-    } else {
-        labelElement.innerHTML = "AD TO BS"
-        dateBS2AD = true;
-    }
-    inputElement.value = ''
+function hideLoading() {
+    const loader = document.querySelectorAll(".loading");
+    loader.forEach(l => {
+        l.classList.remove("show")
+    })
 }
 
+function showLoading() {
+    const loader = document.querySelectorAll(".loading");
+    loader.forEach(l => {
+        l.classList.add("show")
+    })
+}
 convertButtton.onclick = async () => {
-    const date = document.getElementById('date').value;
+    const date = document.getElementById('input-date').value;
+    showLoading()
     if (date && dateBS2AD) {
         const response = await fetch(`${Endpoint}/datebs2ad?date=${date}`)
-        if (response.ok == 200) {
+        if (response.ok) {
+            const json = await response.json()
             const dateBS = json.date;
             resultElement.innerHTML = dateBS;
         }
@@ -50,12 +51,14 @@ convertButtton.onclick = async () => {
         }
     }
     else if (date && !dateBS2AD) {
-        console.log(date)
+
         //Endpoint Missing to Convert BS TO AD
     }
+    hideLoading()
 
 }
 
 clearButton.onclick = () => {
+    const inputElement = document.getElementById('input-date')
     inputElement.value = ''
 }

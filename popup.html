@@ -8,31 +8,28 @@
     <div class="contentWrapper">
       <div class="content active" id="main-content">
         <div>
-          <label for="date"><span id="label-header">AD TO BS</span> </label>
+          <label for="input-date"
+            ><span id="label-header">AD TO BS</span>
+          </label>
           <input
             type="text"
-            id="date"
-            name="date"
+            id="input-date"
+            name="input-date"
             placeholder="YYYY-MM-DD"
             required
             pattern="\d{4}/\d{1,2}/\d{1,2}"
           />
         </div>
-
-        <p class="result">RESULT: <span id="result-date"></span></p>
+       
+        <div class="result">
+          RESULT: <span id="result-date"></span> </span>
+          <span class="loading"></span>
+        </div>
 
         <div class="buttonWrapper">
           <button class="convert">Convert</button>
           <button class="clear">Clear</button>
         </div>
-      </div>
-      <div class="content" id="setting-content">
-        Calender or Settings
-        <div class="today-date">
-          <span id="todayADdate">Dec 3, 2022</span>
-          <span id="todayBSdate">म 17, 2078</span>
-        </div>
-        <button class="tab-button" data-id="main-content">Back</button>
       </div>
     </div>
   </div>
