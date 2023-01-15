@@ -3,11 +3,18 @@ const tabs = document.querySelector(".wrapper");
 const tabButton = document.querySelectorAll(".tab-button");
 const contents = document.querySelectorAll(".content");
 const convertButtton = document.querySelector(".convert")
+const switchButton = document.querySelector(".switch")
 const clearButton = document.querySelector(".clear")
+const todayDateBS = document.getElementById("today-date-BS");
+const todayDateAD = document.getElementById("today-date-AD");
 const resultElement = document.getElementById('result-date');
-const Endpoint = 'https://binij-web-server.netlify.app/.netlify/functions/date-converter'
-let dateBS2AD = true;
+const labelHeader = document.getElementById('label-header');
+import { BSTOAD, ADTOBS, getTodayDateBS, getTodayDateAD, formatedResponsAD, formatedResponsBS } from './utils.js'
+let dateBS2AD = false;
 
+labelHeader.innerHTML = "AD TO BS"
+todayDateBS.innerHTML = getTodayDateBS();
+todayDateAD.innerHTML = getTodayDateAD();
 tabs.onclick = e => {
     const id = e.target.dataset.id;
     if (id) {
@@ -39,23 +46,34 @@ function showLoading() {
 convertButtton.onclick = async () => {
     const date = document.getElementById('input-date').value;
     showLoading()
-    if (date && dateBS2AD) {
-        const response = await fetch(`${Endpoint}/datebs2ad?date=${date}`)
-        if (response.ok) {
-            const json = await response.json()
-            const dateBS = json.date;
-            resultElement.innerHTML = dateBS;
-        }
-        else if (response.status == 501) {
-            resultElement.innerHTML = "Invalid Date"
-        }
+    const stringDate = date + ""
+    const [year, month, day] = stringDate.split("-");
+    if (date && !dateBS2AD) {
+        const res = ADTOBS(year, month - 1, day);
+        resultElement.innerHTML = formatedResponsBS(res)
     }
-    else if (date && !dateBS2AD) {
+    else if (date && dateBS2AD) {
+        if (year, month, day) {
+            const res = BSTOAD(year, month - 1, day);
+            resultElement.innerHTML = formatedResponsAD(res);
+        }
 
-        //Endpoint Missing to Convert BS TO AD
+
     }
     hideLoading()
 
+}
+
+
+switchButton.onclick = () => {
+    if (dateBS2AD) {
+        labelHeader.innerHTML = "AD TO BS";
+        dateBS2AD = false;
+    }
+    else {
+        labelHeader.innerHTML = "BS TO AD"
+        dateBS2AD = true;
+    }
 }
 
 clearButton.onclick = () => {

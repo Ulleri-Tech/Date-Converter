@@ -50,6 +50,16 @@ button {
   color: hsl(219, 100%, 53%);
 }
 
+.date-today{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+span.today{
+  font-weight: 600;
+}
+
 button.convert {
   color: white;
   padding: 6px 12px;
@@ -79,12 +89,28 @@ button.clear {
   border: 2px solid rgb(229 231 235);
 }
 
+button.switch {
+  color: rgb(17 24 39);
+  padding: 2px 4px;
+  background: white;
+  border: 1px solid rgb(50, 172, 9);
+}
+
+button.switch:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px rgb(97, 169, 72);
+}
+
 button.clear:focus {
   outline: none;
   box-shadow: 0 0 0 3px rgb(229 231 235);
 }
 
-button.convert:hover, .swap-button:hover {
+button.switch:hover{
+  background-color: rgb(97, 169, 72);
+}
+
+button.convert:hover, .swap-button:hover  {
   filter: brightness(0.8);
 }
 button.clear:hover {
@@ -137,4 +163,11 @@ button.active {
     background-color: #fff;
     color: black;
   }
+}
+
+.switch-img{
+  width: 100%;
+}
+.switch-img:hover{
+  color: white;
 }

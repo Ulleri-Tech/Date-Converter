@@ -1,15 +1,28 @@
-<link href="popup.css" rel="stylesheet" type="text/css" />
-<script type="module" src="popup.js"></script>
 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link href="popup.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="popup.js" defer></script>
+    </head>
+<body>
 <div class="container">
   <div class="title">B.S Date Converter</div>
 
   <div class="wrapper">
     <div class="contentWrapper">
+     
       <div class="content active" id="main-content">
+        <div class="date-today">
+         <span class="today">Today</span> <span id="today-date-BS"></span>
+         <span id="today-date-AD"></span>
+         </div>
         <div>
           <label for="input-date"
-            ><span id="label-header">AD TO BS</span>
+            ><span id="label-header"></span>
+
+            <button class="switch"> <img height="12" width="16" src="assets/swap.svg" class="switch-img"></button>
           </label>
           <input
             type="text"
@@ -22,7 +35,7 @@
         </div>
        
         <div class="result">
-          RESULT: <span id="result-date"></span> </span>
+          Result: <span id="result-date"></span> </span>
           <span class="loading"></span>
         </div>
 
@@ -34,3 +47,5 @@
     </div>
   </div>
 </div>
+</body>
+</html>
