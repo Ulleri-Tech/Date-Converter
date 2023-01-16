@@ -50,7 +50,7 @@ convertButtton.onclick = async () => {
     const [year, month, day] = stringDate.split("-");
     if (date && !dateBS2AD) {
         const res = ADTOBS(year, month - 1, day);
-        resultElement.innerHTML = formatedResponsBS(res)
+        resultElement.innerHTML = formatedResponsBS(res, stringDate)
     }
     else if (date && dateBS2AD) {
         if (year, month, day) {

@@ -360,16 +360,16 @@
     function formatedResponsAD(date_str_ad) {
         if ((date_str_ad + "").includes('Invalid')) return date_str_ad;
         return new Date(date_str_ad).toLocaleString('en-ca', {
-            month: 'short',
+            month: 'long',
             day: 'numeric',
             year: 'numeric',
-            weekday: 'short'
+            weekday: 'long'
         })
     }
 
-    function formatedResponsBS(date_str_bs) {
+    function formatedResponsBS(date_str_bs, date_ad) {
         if ((date_str_bs + "").includes('Invalid')) return date_str_bs;
-        const weekday_BS = weekDayBS[new Date().getDay()];
+        const weekday_BS = weekDayBS[new Date(date_ad).getDay()];
         const year_bs = convertToNepali(date_str_bs.split("-")[0]);
         const month_bs = date_str_bs.split("-")[1];
         const day_bs = convertToNepali(date_str_bs.split("-")[2]);
@@ -435,7 +435,7 @@
         const [year, month, day] = stringDate.split("-");
         if (date && !dateBS2AD) {
             const res = ADTOBS(year, month - 1, day);
-            resultElement.innerHTML = formatedResponsBS(res);
+            resultElement.innerHTML = formatedResponsBS(res, stringDate);
         }
         else if (date && dateBS2AD) {
             if (day) {
