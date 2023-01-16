@@ -55,6 +55,7 @@ button {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  font-size: 0.9rem;
 }
 span.today{
   font-weight: 600;
@@ -75,6 +76,7 @@ button.convert {
   align-items: center;
   gap:10px;
   height: 24px;
+  font-size: 0.8rem;
 }
 
 button.convert:focus {
