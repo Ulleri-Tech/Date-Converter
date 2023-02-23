@@ -1,12 +1,8 @@
-body,
-p {
-  margin: 0;
-}
+
 .container {
-  width: 280px;
+  width: 600px;
 }
 .title {
-  font-family: Georgia, serif;
   font-size: 18px;
   text-align: center;
   line-height: 24px;
@@ -55,7 +51,7 @@ button {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 span.today{
   font-weight: 600;
@@ -76,7 +72,7 @@ button.convert {
   align-items: center;
   gap:10px;
   height: 24px;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 button.convert:focus {
@@ -93,14 +89,14 @@ button.clear {
 
 button.switch {
   color: rgb(17 24 39);
-  padding: 2px 4px;
+  padding: 2px 2px;
   background: white;
-  border: 1px solid rgb(50, 172, 9);
+  border: 1px solid rgb(57, 173, 18);
 }
 
 button.switch:focus {
   outline: none;
-  box-shadow: 0 0 0 1px rgb(97, 169, 72);
+  box-shadow: 0 0 0 1px rgb(57, 173, 18);
 }
 
 button.clear:focus {
@@ -109,11 +105,11 @@ button.clear:focus {
 }
 
 button.switch:hover{
-  background-color: rgb(97, 169, 72);
+  color: rgb(57, 173, 18);
 }
 
 button.convert:hover, .swap-button:hover  {
-  filter: brightness(0.8);
+  filter: brightness(1.2);
 }
 button.clear:hover {
   color: hsl(219, 100%, 53%);
