@@ -1,0 +1,143 @@
+
+.date-today{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.buttonWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+button.convert, button.clear, button.switch{
+  border-radius: 10px;
+}
+
+button.convert {
+  color: white;
+  padding: 6px 12px;
+  border: 0;
+  background: hsl(219, 100%, 53%);
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+button.convert:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgb(147 197 253);
+}
+
+
+button.clear {
+  color: rgb(17 24 39);
+  padding: 4px 12px;
+  background: white;
+  border: 2px solid rgb(229 231 235);
+}
+
+button.clear:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgb(229 231 235);
+}
+
+
+button.switch {
+  color: rgb(17 24 39);
+  padding: 3px 8px;
+  background: white;
+  border: 1px solid rgb(38, 124, 10);
+}
+
+button.switch:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px rgb(38, 124, 10);
+}
+
+button.switch:hover{
+  outline: none;
+  color: rgb(57, 173, 18);
+}
+
+button.convert:hover  {
+  filter: brightness(1.2);
+}
+button.clear:hover {
+  color: hsl(219, 100%, 53%);
+}
+
+.loading.show{
+  width: 1rem;
+  height: 1rem;
+  border: 5px solid #f3f3f3;
+  border-top: 6px solid hsl(219, 100%, 53%);
+  border-radius: 100%;
+  /* margin: auto; */
+  animation: spin 1s infinite linear;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+label {
+  display: flex;
+  gap:0.5rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  color: black;
+}
+input {
+  border: 1px solid rgb(209 213 219);
+  border-radius: 0.5rem;
+  padding: 10px;
+}
+
+.result{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap:10px;
+  height: 24px;
+  font-size: 1.5rem;
+}
+
+
+
+button.active {
+  background-color: white;
+}
+
+.active {
+  background-color: white;
+}
+
+
+/* 
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: rgb(34, 34, 34);
+    color: white;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #fff;
+    color: black;
+  }
+} */
+
+.switch-img{
+  width: 100%;
+}
+.switch-img:hover{
+  color: white;
+}
