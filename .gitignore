@@ -1,5 +1,5 @@
-.DS_Store
 Archive.zip
 node_modules
 temp
 dist
+.DS_Store
