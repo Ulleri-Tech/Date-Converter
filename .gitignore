@@ -3,3 +3,7 @@ node_modules
 temp
 dist
 .DS_Store
+dist.crx
+dist.pem
+.DS_Store
+manifestv2firfox
